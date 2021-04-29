@@ -14,15 +14,18 @@ fib(3) ==> 2
 #include <iostream>
 
 int fib(int n){
-  int v1 = 0;
-  int v2 = 1;
-  int temp = 0;
-  for (int i=0;i!=n;i++){
-    temp = v2;
-    v2=v1+v2;
-    v1=temp;
+  if (n<0){
+    return -1;
   }
-  return v1;
+  else if (n==0){
+    return 0;
+  }
+  else if (n==1){
+    return 1;
+  }
+  else{
+    return fib(n-1)+fib(n-2);
+  }
 }
 int main(){
   int value;
